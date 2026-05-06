@@ -201,12 +201,12 @@ th, td {
     box-sizing: border-box;
 }
 
-body {
+/* .bodyblue {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-blue);
     padding: 0 80px;
     color: var(--text-dark);
-}
+} */
 
 /* Navbar */
 .navbar {
@@ -303,7 +303,7 @@ h1 {
 
 .hero-action p {
     font-size: 14px;
-    color: var(--text-gray);
+    color: var(black);
 }
 
 .btn-login {
