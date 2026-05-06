@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartKas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="judulBulan" class="judulBulan"></h1>   
+
+    <!-- Tambah Siswa -->
+    <!-- <div class="input-box"> -->
+        <!-- Search -->
+    <div class="top-bar">
+        <input  class="search-container" 
+            type="text" id="searchInput" 
+            placeholder="         Cari nama siswa..." 
+            onkeyup="cariSiswa()">
+        <p id="pesan"></p>
+
+        <button onclick="bukaPopup()" style="font-size: 20px;">
+            <img src="asset/PlusSquareDotted.png" alt="plus" class="plus-icon"> 
+            Tambah Siswa
+        </button>
+
+        <div class="total-kas-container" id="totalKas">
+            Total Kas: RP 0
+        </div>
+    </div>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <h3>Tambah Data Siswa</h3>
+
+                    <input type="text" id="inputNama" placeholder="Masukkan nama siswa">
+
+                    <div class="popup-btn">
+                        <button onclick="simpanSiswa()">Simpan</button>
+                        <button onclick="tutupPopup()">Batal</button>
+                    </div>
+                </div>
+            </div>
+    <!-- </div> -->
+
+    
+
+    <!-- tabel -->
+     <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Lengkap</th>
+                        <th>Minggu 1</th>
+                        <th>Minggu 2</th>
+                        <th>Minggu 3</th>
+                        <th>Minggu 4</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodySiswa">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="columRekap">
+            <div class="rekapMingguan-container">
+                <h2>Rekap Mingguan 1</h2>
+                <div id="recapMingguan"></div>
+            </div>
+
+            <div class="rekapMingguan-container">
+                <h2>Rekap Mingguan 2</h2>
+                <div id="recapMingguan"></div>
+            </div>
+
+            <div class="rekapMingguan-container">
+                <h2>Rekap Mingguan 3</h2>
+                <div id="recapMingguan"></div>
+            </div>
+        </div>
+        
+     </div>
+    
+
+
+    <script src="PageInput.js"></script> <!-- Script utama -->
+    
+</body>
+</html>

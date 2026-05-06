@@ -1,0 +1,148 @@
+/* ========================
+   CSS untuk halaman login
+  ========================*/
+
+body {
+    margin: 0;
+    font-family: serif;
+}
+
+/* Container utama */
+.wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* KIRI */
+.left {
+    flex: 1;
+    background: #f2f2f2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    transform: translateX(0);
+}
+
+.left-content img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.left h1 {
+    font-size: 40px;
+    color: #1f3b75;
+    margin: 10px 0;
+}
+
+.left p {
+    font-size: 18px;
+}
+
+/* KANAN */
+.right {
+    flex: 1;
+    background: #b7c4cf;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(0);
+}
+
+/* Form login */
+.login-box {
+    width: 300px;
+}
+
+.login-box label {
+    font-size: 26px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: none;
+    background: #eee;
+}
+
+.forgot {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #eee;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.or {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* tombol bawah */
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+/* default */
+.left { order: 1; flex: 1; }
+.right { order: 2; flex: 1; }
+
+.left, .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.6s ease; /* ⬅️ animasi utama */
+}
+
+/* saat mode register */
+.wrapper.register-mode .left {
+    transform: translateX(100%); /* geser ke kanan */
+}
+
+.wrapper.register-mode .right {
+    transform: translateX(-100%); /* geser ke kiri */
+} 
+
+.left-content, .login-box {
+    transition: opacity 0.4s ease;
+}
+
+.wrapper.register-mode .left-content {
+    opacity: 0.7;
+}
+
+.wrapper.register-mode .login-box {
+    opacity: 1;
+}
