@@ -196,22 +196,32 @@ css untuk halaman About
 .About {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    top: 2rem;
-    gap: 40rem;
+    align-items: start;
+    /* top: 2rem; */
+    padding-top: 5rem;
+    gap: 3rem;
 }
-.About h2 {
+.About-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: start; */
+    /* gap: 40rem; */
+        /* margin-top: -15rem; */
+
+}
+.About-content h2 {
     justify-content: left;
     font-size: 36px;
     color: #000000;
-    margin-bottom: 20px;
+    /* margin-bottom: 30px; */
     
 }
 .penjelas  {
     /* display: flex;
     flex-direction: column;
     justify-content: left; */
-    width: 40% ;
+    
+    width: 100% ;
     height: auto;
     font-size: 18px;
     color: #000000;
@@ -219,15 +229,20 @@ css untuk halaman About
     text-align: left;
 }
 
-.comp{
+.iconT{
     /* display: flex; */
-    background-color: #1E56A0;
+    background-color: #dee1e7;
     width: 30%;
-    height: auto;
-    gap: 20px;
-    margin-top: 30px;
+    /* height: auto; */
+    /* gap: 20px; */
+    /* margin-top: 30px; */
+    box-shadow: #000000 4px 2px 8px;
 }
-/*css untuk landing page*/
+
+
+/* ========================
+css untuk landing page 
+======================== */
 :root {
     --bg-blue: #e3f2fd;
     --primary-blue: #004aad;
@@ -241,12 +256,12 @@ css untuk halaman About
     box-sizing: border-box;
 }
 
-body {
+/* body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-blue);
     padding: 0 80px;
     color: var(--text-dark);
-}
+} */
 
 /* Navbar */
 .navbar {
