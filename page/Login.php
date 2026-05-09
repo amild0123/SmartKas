@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -6,10 +6,8 @@
 <title>SmartKas Login</title>
 <link rel="stylesheet" href="styleLogin.css">
 
-<style>
 
-</style>
-</head>
+</head> -->
 <body>
 
   <div class="wrapper" id="wrapper">
@@ -67,7 +65,7 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 <!-- <div class="container">
   <div class="left">
     <div class="logo">

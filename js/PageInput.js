@@ -61,6 +61,7 @@ function bukaPopup() {
 function tutupPopup() {
     document.getElementById("popup").style.display = "none";
     document.getElementById("inputNama").value = "";
+    document.getElementById("absen").value = "";
 }
 
 

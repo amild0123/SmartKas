@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About US</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="background-color: #D9EAFD;">
+
+<body >
     <div class="About">
 
         <div class="About-content">
@@ -29,7 +22,7 @@
 
         <div class="About-card">
                 <h3> 
-                    <img src="asset/pengertian.png" alt=" ">
+                    <img src="asset/tujuan.png" alt=" ">
                     Tujuan</h3>
                 <p>Aplikasi ini dibuat dengan tujuan : <br> 
                     <br> 
@@ -41,7 +34,7 @@
 
         <div class="About-card">
                 <h3>
-                    <img src="asset/tujuan.png" alt="">
+                    <img src="asset/manfaat.png" alt="">
                     Manfaat</h3>
             <p>Dengan menggunakan aplikasi ini, anda dapat merasakan berbagai manfaat, antara lain :
                     <br> <br>
@@ -55,7 +48,7 @@
     </div>
 
     <div class="down-card">
-        <img src="asset/manfaat.png" alt="">
+        <img src="asset/keamanan.png" alt="">
         <div style="display: flex; flex-direction: column;  ">
             <h3> Keamanan Data Terjamin </h3>
             
