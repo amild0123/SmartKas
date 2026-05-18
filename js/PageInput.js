@@ -99,23 +99,36 @@ function tambahSiswa() {
 ======================== */
 
 function simpanSiswa() {
-    const nama = document.getElementById("inputNama").value;
 
-    if (nama.trim() === "") {
-        alert("Nama tidak boleh kosong");
-        return;
-    }
+    let nama = document.getElementById("inputNama").value;
+    let absen = document.getElementById("absen").value;
 
-    dataSiswa.push({
-        nama: nama,
-        minggu1: false,
-        minggu2: false,
-        minggu3: false,
-        minggu4: false
+    fetch("database/simpanSiswa.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `nama=${nama}&absen=${absen}`
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+        if(data == "success"){
+
+            alert("Data berhasil disimpan!");
+
+            location.reload();
+
+        } else {
+
+            alert("Data gagal disimpan");
+
+        }
+
     });
 
-    tampilkanData();
-    tutupPopup();
 }
 
 /* ========================

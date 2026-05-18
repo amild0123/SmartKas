@@ -1,13 +1,13 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SmartKas Login</title>
-<link rel="stylesheet" href="styleLogin.css">
+<link rel="stylesheet" href="css/styleLogin.css">
 
 
-</head> -->
+</head>
 <body>
 
   <div class="wrapper" id="wrapper">
