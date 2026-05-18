@@ -97,25 +97,30 @@ function tambahSiswa() {
 /* ========================
    SIMPAN SISWA
 ======================== */
-
 function simpanSiswa() {
 
     let nama = document.getElementById("inputNama").value;
     let absen = document.getElementById("absen").value;
 
     fetch("database/simpanSiswa.php", {
+
         method: "POST",
+
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `nama=${nama}&absen=${absen}`
+
+        body: "nama=" + nama + "&absen=" + absen
+
     })
 
     .then(response => response.text())
 
     .then(data => {
 
-        if(data == "success"){
+        console.log(data);
+
+        if(data == "success") {
 
             alert("Data berhasil disimpan!");
 
@@ -123,9 +128,17 @@ function simpanSiswa() {
 
         } else {
 
-            alert("Data gagal disimpan");
+            alert(data);
 
         }
+
+    })
+
+    .catch(error => {
+
+        alert("Fetch Error");
+
+        console.log(error);
 
     });
 
