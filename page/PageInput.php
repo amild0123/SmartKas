@@ -57,22 +57,8 @@
                 </table>
             </div>
 
-            <div class="columRekap">
-                <div class="rekapMingguan-container">
-                    <h2>Rekap Mingguan 1</h2>
-                    <div id="recapMingguan"></div>
-                </div>
+           <div class="columRekap" id="rekapContainer"></div>
 
-                <div class="rekapMingguan-container">
-                    <h2>Rekap Mingguan 2</h2>
-                    <div id="recapMingguan"></div>
-                </div>
-
-                <div class="rekapMingguan-container">
-                    <h2>Rekap Mingguan 3</h2>
-                    <div id="recapMingguan"></div>
-                </div>
-            </div>
             
         </div>
     
