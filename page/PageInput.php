@@ -76,6 +76,8 @@
             
         </div>
     
+        <button onclick="simpanCheckbox()">Simpan Status</button>
+
     </div>
 
 

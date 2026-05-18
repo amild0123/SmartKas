@@ -98,50 +98,24 @@ function tambahSiswa() {
    SIMPAN SISWA
 ======================== */
 function simpanSiswa() {
+  let nama = document.getElementById("inputNama").value;
+  let absen = document.getElementById("absen").value;
 
-    let nama = document.getElementById("inputNama").value;
-    let absen = document.getElementById("absen").value;
-
-    fetch("database/simpanSiswa.php", {
-
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-
-        body: "nama=" + nama + "&absen=" + absen
-
-    })
-
-    .then(response => response.text())
-
-    .then(data => {
-
-        console.log(data);
-
-        if(data == "success") {
-
-            alert("Data berhasil disimpan!");
-
-            location.reload();
-
-        } else {
-
-            alert(data);
-
-        }
-
-    })
-
-    .catch(error => {
-
-        alert("Fetch Error");
-
-        console.log(error);
-
-    });
-
+  fetch("database/simpanSiswa.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: "nama=" + encodeURIComponent(nama) + "&absen=" + encodeURIComponent(absen)
+  })
+  .then(response => response.text())
+  .then(data => {
+    if (data == "success") {
+      tutupPopup();   // popup ketutup
+      loadData();     // tabel refresh
+    } else {
+      alert(data);
+    }
+  })
+  .catch(error => console.error(error));
 }
 
 /* ========================
@@ -217,3 +191,48 @@ function hitungTotalKas() {
     });
 return totalKas;
 }
+
+/* ========================
+   LoAD DATA DARI DATABASE
+======================== */
+function loadData() {
+  fetch("database/tampil.php")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("tbodySiswa").innerHTML = html;
+    })
+    .catch(err => console.error("Error load data:", err));
+}
+
+// panggil saat halaman pertama kali dibuka
+window.onload = loadData;
+
+/* ========================
+   Simpan Checkbox
+======================== */
+function simpanCheckbox() {
+  const checkboxes = document.querySelectorAll("#tbodySiswa input[type=checkbox]");
+  let data = [];
+
+  checkboxes.forEach((cb, i) => {
+    data.push({
+      id: cb.dataset.id, // pastikan di tampil.php ada data-id
+      minggu: cb.dataset.minggu,
+      status: cb.checked ? 1 : 0
+    });
+  });
+
+  fetch("database/simpanCheckbox.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(res => {
+    alert(res);
+    loadData();
+  });
+}
+
+
+
