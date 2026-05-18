@@ -296,7 +296,7 @@ li {
 /* ========================
 css untuk landing page 
 ======================== */
-:root {
+/* :root {
     --bg-blue: #e3f2fd;
     --primary-blue: #004aad;
     --text-dark: #1a1a1a;
@@ -307,7 +307,7 @@ css untuk landing page
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 
 /* .bodyblue {
@@ -318,12 +318,12 @@ css untuk landing page
 } */
 
 /* Navbar */
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
-}
+} */
 
 .logo {
     font-size: 26px;
@@ -440,3 +440,4 @@ h1 {
     /* Memberikan efek bayangan lembut di belakang gambar utama */
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
 }
+

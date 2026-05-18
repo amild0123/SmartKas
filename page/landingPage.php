@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page </title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body >
+<body>
 
     <main class="hero">
         <div class="hero-left">
@@ -32,7 +32,7 @@
                     <p>Dapatkan laporan yang akurat dan siap kapan saja saat dibutuhkan.</p>
                 </div>
                 <div class="card">
-                    <img src="asset/transparan.png" alt="Icon Aman" class="card-icon">
+                    <img src="asset/keamanan.png" alt="Icon Aman" class="card-icon">
                     <h3>Transparan</h3>
                     <p>Kelola keuangan secara transparan dan dapat dipertanggungjawabkan.</p>
                 </div>
