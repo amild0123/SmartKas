@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page </title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body >
+<body>
 
     <main class="hero">
         <div class="hero-left">
-            <h1>Kelola Pemasukan dan Pengeluaran Kas dengan Mudah dan Cerdas</h1>
+            <h1>Kelola Pemasukan dan<br>
+                Pengeluaran Kas dengan<br>
+                Mudah dan Cerdas</h1>
             <p class="sub-text">
-                SmartKas adalah aplikasi pengelolaan kas digital yang dirancang untuk membantu pengguna mencatat pemasukan, pengeluaran, dan rekapan keuangan secara cepat, rapi, dan efisien.
+                SmartKas adalah aplikasi pengelolaan kas digital yang dirancang untuk<br>
+                membantu pengguna mencatat pemasukan, pengeluaran, dan rekapan<br>
+                keuangan secara cepat, rapi, dan efisien.<br>
             </p>
 
             <div class="card-container">
@@ -28,15 +32,15 @@
                     <p>Dapatkan laporan yang akurat dan siap kapan saja saat dibutuhkan.</p>
                 </div>
                 <div class="card">
-                    <img src="asset/transparan.png" alt="Icon Aman" class="card-icon">
+                    <img src="asset/keamanan.png" alt="Icon Aman" class="card-icon">
                     <h3>Transparan</h3>
                     <p>Kelola keuangan secara transparan dan dapat dipertanggungjawabkan.</p>
                 </div>
             </div>
 
-            <div class="hero-action">
+            <div class="rect-login">
                 <button class="btn-login" style="color: black;">Login Sekarang</button>
-                <p>Kelola kas dengan lebih cerdas bersama SmartKas.</p>
+                <p class="sub-text">Kelola kas dengan lebih cerdas bersama SmartKas.</p>
             </div>
         </div>
 
@@ -45,6 +49,7 @@
                 <img src="asset/iconLanding.png" alt="SmartKas Illustration">
             </div>
         </div>
+
     </main>
 </body>
 </html>

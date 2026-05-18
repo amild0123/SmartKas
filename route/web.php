@@ -3,7 +3,7 @@
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 if ($page === 'home') {
-    include 'page/about.php';
+    include 'page/landingPage.php';
 } elseif ($page === 'input') {
     include 'page/PageInput.php';
 } elseif ($page === 'recap') {
