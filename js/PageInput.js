@@ -27,28 +27,17 @@ document.getElementById("judulBulan").innerText =
 /* ========================
    CARI SISWA
 ======================== */
-
 function cariSiswa() {
-    const keyword = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+  const keyword = document.getElementById("searchInput").value;
 
-    const hasil = dataSiswa.filter(siswa =>
-        siswa.nama.toLowerCase().includes(keyword)
-    );
-
-    if (hasil.length === 0) {
-        document.getElementById("pesan").innerText =
-            "Nama siswa tidak terdaftar";
-        const pesan = document.getElementById("pesan");
-        pesan.style.color = "red";
-    } else {
-        document.getElementById("pesan").innerText = "";
-    }
-
-    tampilkanData(hasil);
+  fetch("database/searchSiswa.php?keyword=" + encodeURIComponent(keyword))
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("tbodySiswa").innerHTML = html;
+    })
+    .catch(err => console.error("Error search:", err));
 }
+
 
 /* ========================
    POPUP
@@ -200,12 +189,18 @@ function loadData() {
     .then(res => res.text())
     .then(html => {
       document.getElementById("tbodySiswa").innerHTML = html;
+      rekapMingguan(); // update rekap setelah tabel di-load
     })
     .catch(err => console.error("Error load data:", err));
 }
 
 // panggil saat halaman pertama kali dibuka
-window.onload = loadData;
+window.onload = function() {
+  loadData();        // tampilkan tabel
+  generateRekapBoxes(); // buat box sesuai minggu
+  rekapMingguan();   // isi data rekap
+};
+
 
 /* ========================
    Simpan Checkbox
@@ -234,5 +229,41 @@ function simpanCheckbox() {
   });
 }
 
+/* ========================
+    Rekap Mingguan
+======================== */
+function rekapMingguan() {
+  fetch("database/rekap.php")
+    .then(res => res.json())
+    .then(data => {
+      for (let i = 1; i <= 4; i++) {
+        const el = document.getElementById("recapMingguan" + i);
+        if (el) {
+          el.innerText = "Sudah bayar: " + data["minggu" + i] + " siswa";
+        }
+      }
+    });
+}
 
+/* ========================
+    Rekap Muncul perminggu
+======================== */
+function generateRekapBoxes() {
+  const sekarang = new Date();
+  const mingguKe = Math.min(sekarang.getDate() / 7 | 0, 4); 
+  // hitung minggu ke berapa (1–4), pakai tanggal sekarang
+
+  const container = document.getElementById("rekapContainer");
+  container.innerHTML = ""; // kosongkan dulu
+
+  for (let i = 1; i <= mingguKe; i++) {
+    const box = document.createElement("div");
+    box.className = "rekapMingguan-container";
+    box.innerHTML = `
+      <h2>Rekap Mingguan ${i}</h2>
+      <div id="recapMingguan${i}"></div>
+    `;
+    container.appendChild(box);
+  }
+}
 
