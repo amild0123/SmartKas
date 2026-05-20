@@ -124,7 +124,7 @@ th, td {
     height: 165px;
     box-shadow: #000000 4px 2px 8px;
     border-radius: 10px;
-    background: #dbe2eb;
+    background: #495d77;
     padding: 15px;
 }
 .rekapMingguan-container h2 {
@@ -133,7 +133,7 @@ th, td {
     text-align: center;
 }
 .rekapMingguan-container p {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     margin: 10px 0;
 }

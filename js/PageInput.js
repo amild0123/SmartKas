@@ -189,7 +189,7 @@ function loadData() {
     .then(res => res.text())
     .then(html => {
       document.getElementById("tbodySiswa").innerHTML = html;
-      rekapMingguan(); // update rekap setelah tabel di-load
+      rekapMingguan(); // panggil di sini
     })
     .catch(err => console.error("Error load data:", err));
 }
@@ -230,40 +230,38 @@ function simpanCheckbox() {
 }
 
 /* ========================
+    Rekap Muncul perminggu
+======================== */
+function generateRekapBoxes(data) {
+  const sekarang = new Date();
+  const mingguKe = Math.min(Math.ceil(sekarang.getDate() / 7), 4);
+
+  const container = document.getElementById("rekapContainer");
+  container.innerHTML = "";
+
+  for (let i = 1; i <= mingguKe; i++) {
+    const box = document.createElement("div");
+    box.className = "rekapMingguan-container";
+    box.innerHTML = `
+      <h2>Rekap Minggu ${i}</h2>
+      <p>Keseluruhan : Rp ${data["minggu"+i].keseluruhan.toLocaleString("id-ID")}</p>
+      <p>Pemasukan   : Rp ${data["minggu"+i].pemasukan.toLocaleString("id-ID")}</p>
+      <p>Jumlah Nunggak : Rp ${data["minggu"+i].nunggak.toLocaleString("id-ID")}</p>
+    `;
+    container.appendChild(box);
+  }
+}
+
+/* ========================
     Rekap Mingguan
 ======================== */
 function rekapMingguan() {
   fetch("database/rekap.php")
     .then(res => res.json())
     .then(data => {
-      for (let i = 1; i <= 4; i++) {
-        const el = document.getElementById("recapMingguan" + i);
-        if (el) {
-          el.innerText = "Sudah bayar: " + data["minggu" + i] + " siswa";
-        }
-      }
-    });
+      generateRekapBoxes(data);
+    })
+    .catch(err => console.error("Error rekap:", err));
 }
 
-/* ========================
-    Rekap Muncul perminggu
-======================== */
-function generateRekapBoxes() {
-  const sekarang = new Date();
-  const mingguKe = Math.min(sekarang.getDate() / 7 | 0, 4); 
-  // hitung minggu ke berapa (1–4), pakai tanggal sekarang
-
-  const container = document.getElementById("rekapContainer");
-  container.innerHTML = ""; // kosongkan dulu
-
-  for (let i = 1; i <= mingguKe; i++) {
-    const box = document.createElement("div");
-    box.className = "rekapMingguan-container";
-    box.innerHTML = `
-      <h2>Rekap Mingguan ${i}</h2>
-      <div id="recapMingguan${i}"></div>
-    `;
-    container.appendChild(box);
-  }
-}
 

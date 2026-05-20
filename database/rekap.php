@@ -1,15 +1,23 @@
 <?php
 include "koneksi.php";
-
+$tarif = 5000;
 $data = [];
 
-// Hitung jumlah siswa yang sudah bayar tiap minggu
+$totalSiswa = $conn->query("SELECT COUNT(*) as total FROM kas")->fetch_assoc()['total'];
+
 for ($i = 1; $i <= 4; $i++) {
-    $sql = "SELECT COUNT(*) as total FROM kas WHERE minggu$i = 1";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $data["minggu$i"] = $row['total'];
+    $sudahBayar = $conn->query("SELECT COUNT(*) as total FROM kas WHERE minggu$i = 1")->fetch_assoc()['total'];
+    $keseluruhan = $totalSiswa * $tarif;
+    $pemasukan   = $sudahBayar * $tarif;
+    $nunggak     = $keseluruhan - $pemasukan;
+
+    $data["minggu$i"] = [
+        "keseluruhan" => $keseluruhan,
+        "pemasukan"   => $pemasukan,
+        "nunggak"     => $nunggak
+    ];
 }
 
+header('Content-Type: application/json'); // penting!
 echo json_encode($data);
 ?>
