@@ -71,17 +71,17 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
     <meta charset="UTF-8">
     <title>SmartKas</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/recap.css">
 </head>
 <body>
 
     <!-- TITLE -->
     <div class="title">
-        <h1>RECAP KAS BULAN JANUARI</h1>
+        <h1>REKAP KAS BULAN JANUARI</h1>
     </div>
 
     <!-- CARD -->
-    <div class="card-container-recap">
+    <div class="card-container">
 
         <div class="card-recap">
             <h3>Total Pemasukan</h3>
@@ -113,7 +113,7 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
     <div class="content">
 
         <!-- RECAP -->
-        <div class="table-box-recap">
+        <div class="table-box">
 
             <h2>Recap Mingguan Bulan Januari</h2>
 
@@ -168,7 +168,7 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
         </div>
 
         <!-- DETAIL -->
-        <div class="table-box-recap">
+        <div class="table-box">
 
             <h2>Detail Kas Bulan Januari</h2>
 
@@ -242,8 +242,6 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
         </div>
 
     </div>
-
-    <script src="js/recap.js"></script> <!-- Script utama -->
 
 </body>
 </html>

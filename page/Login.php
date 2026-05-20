@@ -27,7 +27,7 @@
 
             <!-- LOGIN -->
             <div id="loginForm">
-                <label>Email</label>
+                <label> Email</label>
                 <input type="text">
 
                 <label>Password</label>

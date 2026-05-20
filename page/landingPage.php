@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page </title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-</head>
+
 <body>
 
     <main class="hero">
@@ -39,14 +31,16 @@
             </div>
 
             <div class="rect-login">
-                <button class="btn-login" style="color: black;">Login Sekarang</button>
+                <a href="index.php?page=Login"
+                    <button class="btn-login" style="color: black;">Login Sekarang</button>
+                </a>
                 <p class="sub-text">Kelola kas dengan lebih cerdas bersama SmartKas.</p>
             </div>
         </div>
 
         <div class="hero-right">
             <div class="main-illustration">
-                <img src="asset/iconLanding.png" alt="SmartKas Illustration">
+                <img src="asset/iconLanding.png" alt=" SmartKas Illustration">
             </div>
         </div>
 

@@ -5,7 +5,7 @@
         <ul>
             <li><a href="?page=home">Home</a></li>
             <li><a href="?page=input">Input Kas</a></li>
-            <li><a href="?page=recap">Recap</a></li>
+            <li><a href="?page=recap">Rekap</a></li>
             <button style="background: #f0f0f0; border: none; cursor: pointer; color: #000;" id="accountBtn">👤 Akun</button>
             <!-- <img src="path/to/your/image.png" alt="Profile Picture"> -->
         </ul>

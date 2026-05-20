@@ -8,6 +8,10 @@ if ($page === 'home') {
     include 'page/PageInput.php';
 } elseif ($page === 'recap') {
     include 'page/recap.php';
-} 
+} elseif($page == 'Login') {
+    include 'page/Login.php';
+} elseif($page == 'about') {
+    include 'page/about.php';
+}
 ?>
 
