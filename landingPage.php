@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - SmartKas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
 <body>
-
     <main class="hero">
         <div class="hero-left">
             <h1>Kelola Pemasukan dan<br>
@@ -31,8 +38,8 @@
             </div>
 
             <div class="rect-login">
-                <a href="index.php?page=Login"
-                    <button class="btn-login" style="color: black;">Login Sekarang</button>
+                <a href="index.php?page=Login">
+                    <button class="btn-login" style="color: black;" href="index.php?page=Login">Login Sekarang</button>
                 </a>
                 <p class="sub-text">Kelola kas dengan lebih cerdas bersama SmartKas.</p>
             </div>

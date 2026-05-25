@@ -288,10 +288,10 @@ function animateTotalKas(oldValue, newValue) {
     count++;
     if (count >= steps) {
       clearInterval(timer);
+      // pastikan nilai akhir akurat
+      el.innerText = "Total Kas: Rp " + newValue.toLocaleString("id-ID");
       el.classList.add("updated");
       setTimeout(() => el.classList.remove("updated"), 500);
     }
   }, frameRate);
 }
-
-

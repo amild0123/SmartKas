@@ -9,7 +9,11 @@ if ($page === 'home') {
 } elseif ($page === 'recap') {
     include 'page/recap.php';
 } elseif($page == 'Login') {
-    include 'page/Login.php';
+    include 'Login.php';
+} elseif($page == 'logOut') {
+    include 'route/logOut.php';
+} else {
+    echo "<h1>404 Not Found</h1>";
 }
 ?>
 

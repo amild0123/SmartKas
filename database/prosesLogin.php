@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $result->fetch_assoc();
 
     if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['user'] = $user['nama'];
         $_SESSION['email'] = $user['email'];
         header("Location: ../index.php"); // redirect ke dashboard
