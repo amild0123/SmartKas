@@ -56,17 +56,11 @@
                     </tbody>
                 </table>
             </div>
-
            <div class="columRekap" id="rekapContainer"></div>
-
             
         </div>
-    
-        <button onclick="simpanCheckbox()">Simpan Status</button>
-
+        <button class="simpan" onclick="simpanCheckbox()">Simpan Status</button>
     </div>
-
-
         <script src="js/PageInput.js"></script> <!-- Script utama -->
         
 </body>
