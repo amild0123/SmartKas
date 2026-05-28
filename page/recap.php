@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 /*
 ========================================
@@ -65,14 +64,7 @@ foreach($dataKas as $data){
 $saldoAkhir = $totalPemasukan - $totalPengeluaran;
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>SmartKas</title>
 
-    <link rel="stylesheet" href="css/recap.css">
-</head>
 <body>
 
     <!-- TITLE -->

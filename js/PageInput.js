@@ -201,7 +201,6 @@ window.onload = function() {
   rekapMingguan();   // isi data rekap
 };
 
-
 /* ========================
    Simpan Checkbox
 ======================== */
@@ -255,13 +254,44 @@ function generateRekapBoxes(data) {
 /* ========================
     Rekap Mingguan
 ======================== */
+let lastTotalKas = 0;
+
 function rekapMingguan() {
   fetch("database/rekap.php")
     .then(res => res.json())
     .then(data => {
       generateRekapBoxes(data);
+
+      // animasi angka naik
+      animateTotalKas(lastTotalKas, data.totalKas);
+      lastTotalKas = data.totalKas;
     })
     .catch(err => console.error("Error rekap:", err));
 }
 
 
+/* ========================
+    Animasi Total Kas
+======================== */
+function animateTotalKas(oldValue, newValue) {
+  const el = document.getElementById("totalKas");
+  const duration = 1000; // durasi animasi (ms)
+  const frameRate = 30;  // kecepatan frame
+  const steps = duration / frameRate;
+  const increment = (newValue - oldValue) / steps;
+  let current = oldValue;
+  let count = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    el.innerText = "Total Kas: Rp " + Math.round(current).toLocaleString("id-ID");
+    count++;
+    if (count >= steps) {
+      clearInterval(timer);
+      // pastikan nilai akhir akurat
+      el.innerText = "Total Kas: Rp " + newValue.toLocaleString("id-ID");
+      el.classList.add("updated");
+      setTimeout(() => el.classList.remove("updated"), 500);
+    }
+  }, frameRate);
+}
