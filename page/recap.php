@@ -77,7 +77,7 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
 
     <!-- TITLE -->
     <div class="title">
-        <h1>REKAP KAS BULAN JANUARI</h1>
+        <h1 id="judulBulan" class="judulBulan"></h1> 
     </div>
 
     <!-- CARD -->
@@ -242,6 +242,8 @@ $saldoAkhir = $totalPemasukan - $totalPengeluaran;
         </div>
 
     </div>
+
+    <script src="js/recap.js"></script> <!-- Script utama -->
 
 </body>
 </html>
