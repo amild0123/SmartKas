@@ -295,3 +295,45 @@ function animateTotalKas(oldValue, newValue) {
     }
   }, frameRate);
 }
+
+/* ========================
+    Popup Detail Kas
+======================== */
+function bukaPopupDetail() {
+  document.getElementById("popupDetail").style.display = "flex";
+}
+
+function tutupPopupDetail() {
+  document.getElementById("popupDetail").style.display = "none";
+  document.getElementById("keterangan").value = "";
+  document.getElementById("jumlah").value = "";
+  document.getElementById("jenis").selectedIndex = 0;
+}
+function simpanKas() {
+  let tanggal = document.getElementById("tanggal").value;
+  let keterangan = document.getElementById("keterangan").value;
+  let jenis = document.getElementById("jenis").value;
+  let jumlah = document.getElementById("jumlah").value;
+
+  fetch("database/simpanKas.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body:
+      "tanggal=" + encodeURIComponent(tanggal) +
+      "&keterangan=" + encodeURIComponent(keterangan) +
+      "&jenis=" + encodeURIComponent(jenis) +
+      "&jumlah=" + encodeURIComponent(jumlah)
+  })
+  .then(response => response.text())
+  .then(data => {
+    if (data === "success") {
+      tutupPopupDetail();   // popup ketutup
+      rekapMingguan();      // refresh tampilan rekap
+    } else {
+      alert(data);
+    }
+  })
+  .catch(error => console.error("Error simpanKas:", error));
+}
+
+

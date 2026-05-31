@@ -7,7 +7,7 @@ if ($page === 'home') {
 } elseif ($page === 'input') {
     include 'page/PageInput.php';
 } elseif ($page === 'recap') {
-    include 'page/recap.php';
+    include 'page/rekap.php';
 } elseif($page == 'Login') {
     include 'Login.php';
 } elseif($page == 'logOut') {

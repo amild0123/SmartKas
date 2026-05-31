@@ -17,7 +17,7 @@ const sekarang = new Date();
 const bulanSekarang = namaBulan[sekarang.getMonth()];
 
 document.getElementById("judulBulan").innerText =
-  "INPUT KAS BULAN " + bulanSekarang;
+  "REKAP KAS BULAN " + bulanSekarang;
 
 /*
 ========================================

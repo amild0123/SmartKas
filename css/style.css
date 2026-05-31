@@ -116,7 +116,7 @@ th, td {
 .columRekap {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
 }
 .rekapMingguan-container {
     margin-left: 20px;
@@ -453,3 +453,299 @@ h1 {
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
 }
 
+
+/* =========================
+css untuk halaman rekap
+========================= */
+
+/* =========================
+RECAP WRAPPER
+========================= */
+
+.rekap-wrapper{
+    padding:40px;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.rekap-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.rekap-title h1{
+    font-size:45px;
+    font-weight:800;
+}
+
+/* =========================
+CARD
+========================= */
+
+.rekap-card-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.rekap-card{
+    width:280px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.rekap-card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.rekap-card h2{
+    font-size:30px;
+}
+
+.rekap-green{
+    color:#0c9b36;
+}
+
+.rekap-red{
+    color:#d60000;
+}
+
+.rekap-blue{
+    color:#1a4dd9;
+}
+
+/* =========================
+CONTENT
+========================= */
+
+.rekap-content{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
+
+/* =========================
+TABLE BOX
+========================= */
+
+.rekap-box{
+    flex:2;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.rekap-box-header{
+    margin-bottom:20px;
+}
+
+.rekap-box-header h2{
+    font-size:30px;
+}
+
+/* =========================
+TABLE
+========================= */
+
+.rekap-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.rekap-table thead{
+    background:#d9eafd;
+}
+
+.rekap-table th{
+    padding:15px;
+}
+
+.rekap-table td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+.rekap-table tr:hover{
+    background:#f5f9ff;
+}
+
+/* =========================
+BADGE
+========================= */
+/* 
+.badge-masuk{
+    background:#d8ffe3;
+    color:#0d8f34;
+    padding:7px 12px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.badge-keluar{
+    background:#ffe1e1;
+    color:#cc0000;
+    padding:7px 12px;
+    border-radius:30px;
+    font-size:14px;
+} */
+
+/* =========================
+GROUP 59
+========================= */
+
+.group59-box{
+    width:100%;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+HEADER
+========================= */
+
+.group59-header{
+    margin-bottom:25px;
+}
+
+.group59-header h2{
+    font-size:32px;
+    font-weight:700;
+    color:#111;
+}
+
+/* =========================
+TABLE
+========================= */
+
+.group59-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.group59-table thead{
+    background:#f5f7fb;
+}
+
+.group59-table th{
+    padding:18px;
+    text-align:left;
+    font-size:15px;
+    color:#666;
+}
+
+.group59-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    font-size:15px;
+}
+
+.group59-table tbody tr:hover{
+    background:#fafcff;
+}
+
+/* =========================
+BADGE
+========================= */
+
+.kategori-badge{
+    background:#e7f0ff;
+
+    color:#5b7fe8;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* =========================
+TOTAL
+========================= */
+
+.total-text{
+    font-weight:700;
+    font-size:17px;
+    padding-top:25px;
+}
+
+.total-harga{
+    color:#ff3b30;
+    font-weight:700;
+    font-size:18px;
+    padding-top:25px;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .rekap-content{
+        flex-direction:column;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .rekap-title h1{
+        font-size:35px;
+    }
+
+    .rekap-wrapper{
+        padding:20px;
+    }
+
+}
+
+/* =========================
+POPUP DETAIL
+========================= */
+#popupDetail {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#popupDetail .popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: left;
+}
+
+#popupDetail .popup-content input,
+#popupDetail .popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#popupDetail .popup-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
