@@ -41,7 +41,6 @@ nav ul li a {
     height: 40px;
     border-radius: 50%;    
 }
-
 .account {
     position: absolute;
     top: 60px;
@@ -53,7 +52,6 @@ nav ul li a {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: opacity 0.3s ease;
 }
-
 .account-hidden {
     display: none;
 }
@@ -241,7 +239,38 @@ th, td {
     /* border-radius: 50px; */
     margin-left: 2rem;
 }
+/* =========================
+POPUP DETAIL di page input
+========================= */
+#popupDetail {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
 
+#popupDetail .popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: left;
+}
+
+#popupDetail .popup-content input,
+#popupDetail .popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#popupDetail .popup-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
 
 
 /* ========================
@@ -386,7 +415,6 @@ h1 {
     line-height: 1.6;
     margin-bottom: 40px;
 }
-
 /* Card Styling */
 .card-container {
     display: flex;
@@ -579,31 +607,12 @@ TABLE
 }
 
 /* =========================
-BADGE
-========================= */
-/* 
-.badge-masuk{
-    background:#d8ffe3;
-    color:#0d8f34;
-    padding:7px 12px;
-    border-radius:30px;
-    font-size:14px;
-}
-
-.badge-keluar{
-    background:#ffe1e1;
-    color:#cc0000;
-    padding:7px 12px;
-    border-radius:30px;
-    font-size:14px;
-} */
-
-/* =========================
 GROUP 59
 ========================= */
 
 .group59-box{
-    width:100%;
+    flex:1;
+    min-width:360px;
 
     background:white;
 
@@ -717,35 +726,3 @@ RESPONSIVE
 
 }
 
-/* =========================
-POPUP DETAIL
-========================= */
-#popupDetail {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-#popupDetail .popup-content {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 400px;
-  text-align: left;
-}
-
-#popupDetail .popup-content input,
-#popupDetail .popup-content select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-#popupDetail .popup-btn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}

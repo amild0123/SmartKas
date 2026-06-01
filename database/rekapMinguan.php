@@ -1,6 +1,6 @@
 <?php
 
-include "database/koneksi.php";
+include __DIR__ . "/koneksi.php";
 
 /*
 ========================================
@@ -23,16 +23,17 @@ $totalPemasukan = 0;
 $totalPengeluaran = 0;
 
 $dataTotal = mysqli_query($conn, "
-    SELECT * FROM kas
+    SELECT * FROM rekap
 ");
 
 while($d = mysqli_fetch_assoc($dataTotal)){
+    $jenis = isset($d['jenis']) ? strtolower(trim($d['jenis'])) : '';
 
-    if($d['jenis'] == "Pemasukan"){
+    if($jenis === "pemasukan" || $jenis === "masuk"){
         $totalPemasukan += $d['jumlah'];
     }
 
-    if($d['jenis'] == "Pengeluaran"){
+    if($jenis === "pengeluaran" || $jenis === "keluar"){
         $totalPengeluaran += $d['jumlah'];
     }
 }
